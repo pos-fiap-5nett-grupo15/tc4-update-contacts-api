@@ -1,8 +1,8 @@
-﻿using UpdateContact.Application.DTOs.Contact.UpdateContact;
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 using TechChallenge.Common.DTOs;
+using UpdateContact.Application.DTOs.Contact.UpdateContact;
 
 namespace UpdateContact.Api.Controllers.Contacts
 {

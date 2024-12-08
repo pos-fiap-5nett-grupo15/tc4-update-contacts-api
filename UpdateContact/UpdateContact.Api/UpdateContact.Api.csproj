@@ -24,8 +24,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\CreateContact.Application\CreateContact.Application.csproj" />
-		<ProjectReference Include="..\CreateContact.Application\UpdateContact.Application.csproj" />
+	  <ProjectReference Include="..\UpdateContact.Application\UpdateContact.Application.csproj" />
 	</ItemGroup>
 
 </Project>

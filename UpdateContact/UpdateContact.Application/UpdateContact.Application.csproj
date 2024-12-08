@@ -7,22 +7,20 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Dapper" Version="2.1.35" />
-		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.1" />
-		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.0" />
-		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
-		<PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions" Version="8.0.10" />
-		<PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
 		<!-- <ProjectReference Include="..\..\..\nuget-tech-challenge-fiap\TechChallenge.Common\TechChallenge.Common.csproj" /> -->
 		<!-- <ProjectReference Include="..\..\..\nuget-tech-challenge-fiap\TechChallenge.Domain\TechChallenge.Domain.csproj" /> -->
 		<!-- <ProjectReference Include="..\..\..\nuget-tech-challenge-fiap\TechChallenge.Infrastructure\TechChallenge.Infrastructure.csproj" /> -->
 		<PackageReference Include="TechChallenge.Common" Version="1.1.0" />
 		<PackageReference Include="TechChallenge.Domain" Version="1.0.0" />
 		<PackageReference Include="TechChallenge.Infrastructure" Version="1.1.0" />
+		<PackageReference Include="FluentValidation" Version="11.11.0" />
+		<PackageReference Include="MediatR" Version="12.4.1" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+		<PackageReference Include="RabbitMQ.Client" Version="7.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\CreateContact.Domain\UpdateContact.Domain.csproj" />
+	  <ProjectReference Include="..\UpdateContact.Infrastructure\UpdateContact.Infrastructure.csproj" />
 	</ItemGroup>
 
 </Project>

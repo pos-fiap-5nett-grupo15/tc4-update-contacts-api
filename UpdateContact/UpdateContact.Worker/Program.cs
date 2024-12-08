@@ -1,4 +1,4 @@
-using CreateContract.Worker;
+using UpdateContract.Worker;
 using Microsoft.AspNetCore.Builder;
 
 internal class Program

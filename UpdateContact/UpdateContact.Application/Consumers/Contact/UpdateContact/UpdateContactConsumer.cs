@@ -1,9 +1,9 @@
-﻿using UpdateContact.Infrastructure.Services.Contact;
-using UpdateContact.Infrastructure.Settings;
-using UpdateContact.Worker.Messages;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using TechChallenge.Common.RabbitMQ;
 using TechChallenge.Domain.Enums;
+using UpdateContact.Infrastructure.Services.Contact;
+using UpdateContact.Infrastructure.Settings;
+using UpdateContact.Worker.Messages;
 
 namespace UpdateContact.Application.Consumers.Contact.UpdateContact
 {

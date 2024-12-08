@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdateContact.Api", "CreateContact.Api\UpdateContact.Api.csproj", "{ECADE78A-B263-4F4E-903F-4B249C891E43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdateContact.Api", "UpdateContact.Api\UpdateContact.Api.csproj", "{ECADE78A-B263-4F4E-903F-4B249C891E43}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdateContact.Application", "CreateContact.Application\UpdateContact.Application.csproj", "{D3217858-C36E-4F1A-8DBC-023039E9B231}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdateContact.Application", "UpdateContact.Application\UpdateContact.Application.csproj", "{D3217858-C36E-4F1A-8DBC-023039E9B231}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdateContact.Domain", "CreateContact.Domain\UpdateContact.Domain.csproj", "{731C8D95-5D31-4B73-83EF-1422B6EBE94D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdateContact.Domain", "UpdateContact.Domain\UpdateContact.Domain.csproj", "{731C8D95-5D31-4B73-83EF-1422B6EBE94D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdateContact.Infrastructure", "CreateContact.Infrastructure\UpdateContact.Infrastructure.csproj", "{4C8C4607-04ED-43A2-958C-9F1798084E10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdateContact.Infrastructure", "UpdateContact.Infrastructure\UpdateContact.Infrastructure.csproj", "{4C8C4607-04ED-43A2-958C-9F1798084E10}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdateContract.Worker", "CreateContract.Worker\UpdateContract.Worker.csproj", "{B7E7DE58-F0C7-48C2-B6D6-A2E82CF76586}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdateContract.Worker", "UpdateContact.Worker\UpdateContract.Worker.csproj", "{B7E7DE58-F0C7-48C2-B6D6-A2E82CF76586}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

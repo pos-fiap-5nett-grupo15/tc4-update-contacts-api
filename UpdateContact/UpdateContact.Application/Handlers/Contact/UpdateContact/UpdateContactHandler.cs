@@ -1,26 +1,26 @@
-﻿using UpdateContact.Application.DTOs.Contact.UpdateContact;
-using UpdateContact.Infrastructure.Services.Contact;
-using UpdateContact.Infrastructure.Settings;
-using UpdateContact.Worker.Messages;
-using FluentValidation;
+﻿using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using TechChallenge.Common.RabbitMQ;
 using TechChallenge.Domain.Entities.Contact;
 using TechChallenge.Domain.Enums;
+using UpdateContact.Application.DTOs.Contact.UpdateContact;
+using UpdateContact.Infrastructure.Services.Contact;
+using UpdateContact.Infrastructure.Settings;
+using UpdateContact.Worker.Messages;
 
-namespace UpdateContact.Application.Handlers.Contact.CreateContact
+namespace UpdateContact.Application.Handlers.Contact.UpdateContact
 {
-    public class CreateContactHandler : IRequestHandler<UpdateContactRequest, UpdateContactResponse>
+    public class UpdateContactHandler : IRequestHandler<UpdateContactRequest, UpdateContactResponse>
     {
         private readonly IContactService _contactService;
-        private readonly ILogger<CreateContactHandler> _logger;
+        private readonly ILogger<UpdateContactHandler> _logger;
         private readonly IValidator<UpdateContactRequest> _validator;
         private readonly IRabbitMQProducerSettings _rabbitMQProducerSettings;
 
-        public CreateContactHandler(
+        public UpdateContactHandler(
             IContactService contactService,
-            ILogger<CreateContactHandler> logger,
+            ILogger<UpdateContactHandler> logger,
             IValidator<UpdateContactRequest> validator,
             IRabbitMQProducerSettings rabbitMQProducerSettings)
         {

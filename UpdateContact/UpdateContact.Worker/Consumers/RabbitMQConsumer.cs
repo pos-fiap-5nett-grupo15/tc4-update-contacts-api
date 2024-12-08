@@ -1,12 +1,12 @@
-﻿using UpdateContact.Application.Consumers.Contact.UpdateContact;
-using UpdateContact.Infrastructure.RabbitMQ;
-using UpdateContact.Worker.Messages;
-using RabbitMQ.Client;
+﻿using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System.Text;
 using System.Text.Json;
+using UpdateContact.Application.Consumers.Contact.UpdateContact;
+using UpdateContact.Infrastructure.RabbitMQ;
+using UpdateContact.Worker.Messages;
 
-namespace CreateContract.Worker.Consumers
+namespace UpdateContract.Worker.Consumers
 {
     public class RabbitMQConsumer : BackgroundService
     {

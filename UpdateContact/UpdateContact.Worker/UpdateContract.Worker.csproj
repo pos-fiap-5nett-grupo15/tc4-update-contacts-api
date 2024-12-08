@@ -4,7 +4,7 @@
 		<TargetFramework>net8.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<UserSecretsId>dotnet-CreateContract.Worker-e6a20a55-955e-4a51-b700-4a4db42b28b2</UserSecretsId>
+		<UserSecretsId>dotnet-UpdateContract.Worker-e6a20a55-955e-4a51-b700-4a4db42b28b2</UserSecretsId>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -13,7 +13,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\CreateContact.Application\UpdateContact.Application.csproj" />
-		<ProjectReference Include="..\CreateContact.Infrastructure\UpdateContact.Infrastructure.csproj" />
+		<ProjectReference Include="..\UpdateContact.Application\UpdateContact.Application.csproj" />
+		<ProjectReference Include="..\UpdateContact.Infrastructure\UpdateContact.Infrastructure.csproj" />
 	</ItemGroup>
 </Project>

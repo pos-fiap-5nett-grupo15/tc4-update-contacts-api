@@ -1,16 +1,16 @@
-﻿using UpdateContact.Application.Consumers.Contact.UpdateContact;
-using UpdateContact.Infrastructure.RabbitMQ;
-using UpdateContact.Infrastructure.Services.Contact;
-using UpdateContact.Infrastructure.Settings;
-using UpdateContact.Infrastructure.UnitOfWork;
-using CreateContract.Worker.Consumers;
+﻿using UpdateContract.Worker.Consumers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using TechChallenge.Infrastructure.Crypto;
 using TechChallenge.Infrastructure.Settings;
 using TechChallenge.Infrastructure.UnitOfWork;
+using UpdateContact.Application.Consumers.Contact.UpdateContact;
+using UpdateContact.Infrastructure.RabbitMQ;
+using UpdateContact.Infrastructure.Services.Contact;
+using UpdateContact.Infrastructure.Settings;
+using UpdateContact.Infrastructure.UnitOfWork;
 
-namespace CreateContract.Worker
+namespace UpdateContract.Worker
 {
     internal class Startup
     {

@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "CreateContactAPI": {
+    "UpdateContactAPI": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
