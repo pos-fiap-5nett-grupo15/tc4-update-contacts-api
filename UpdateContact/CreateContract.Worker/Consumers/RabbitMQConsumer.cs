@@ -1,6 +1,6 @@
-﻿using CreateContact.Application.Consumers.Contact.UpdateContact;
-using CreateContact.Infrastructure.RabbitMQ;
-using CreateContact.Worker.Messages;
+﻿using UpdateContact.Application.Consumers.Contact.UpdateContact;
+using UpdateContact.Infrastructure.RabbitMQ;
+using UpdateContact.Worker.Messages;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System.Text;

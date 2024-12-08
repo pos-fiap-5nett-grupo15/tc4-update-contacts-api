@@ -1,6 +1,6 @@
 ﻿using TechChallenge.Domain.Entities.Contact;
 
-namespace CreateContact.Infrastructure.Repositories.Contact
+namespace UpdateContact.Infrastructure.Repositories.Contact
 {
     public interface IContactRepository
     {

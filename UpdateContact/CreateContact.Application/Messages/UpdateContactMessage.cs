@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace CreateContact.Worker.Messages
+namespace UpdateContact.Worker.Messages
 {
     public class UpdateContactMessage
     {

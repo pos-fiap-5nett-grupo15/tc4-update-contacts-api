@@ -1,4 +1,4 @@
-using CreateContact.Api;
+using UpdateContact.Api;
 
 internal class Program
 {

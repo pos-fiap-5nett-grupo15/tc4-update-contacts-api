@@ -1,11 +1,11 @@
-﻿using CreateContact.Infrastructure.Services.Contact;
-using CreateContact.Infrastructure.Settings;
-using CreateContact.Worker.Messages;
+﻿using UpdateContact.Infrastructure.Services.Contact;
+using UpdateContact.Infrastructure.Settings;
+using UpdateContact.Worker.Messages;
 using Microsoft.Extensions.Logging;
 using TechChallenge.Common.RabbitMQ;
 using TechChallenge.Domain.Enums;
 
-namespace CreateContact.Application.Consumers.Contact.UpdateContact
+namespace UpdateContact.Application.Consumers.Contact.UpdateContact
 {
     public class UpdateContactConsumer : IUpdateContactConsumer
     {

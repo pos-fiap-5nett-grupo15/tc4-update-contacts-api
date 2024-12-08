@@ -1,8 +1,8 @@
-﻿using CreateContact.Application.Consumers.Contact.UpdateContact;
-using CreateContact.Infrastructure.RabbitMQ;
-using CreateContact.Infrastructure.Services.Contact;
-using CreateContact.Infrastructure.Settings;
-using CreateContact.Infrastructure.UnitOfWork;
+﻿using UpdateContact.Application.Consumers.Contact.UpdateContact;
+using UpdateContact.Infrastructure.RabbitMQ;
+using UpdateContact.Infrastructure.Services.Contact;
+using UpdateContact.Infrastructure.Settings;
+using UpdateContact.Infrastructure.UnitOfWork;
 using CreateContract.Worker.Consumers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

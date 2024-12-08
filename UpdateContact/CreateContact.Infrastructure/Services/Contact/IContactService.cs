@@ -1,7 +1,7 @@
 ﻿using TechChallenge.Domain.Entities.Contact;
 using TechChallenge.Domain.Enums;
 
-namespace CreateContact.Infrastructure.Services.Contact
+namespace UpdateContact.Infrastructure.Services.Contact
 {
     public interface IContactService
     {

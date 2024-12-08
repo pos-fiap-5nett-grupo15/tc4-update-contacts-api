@@ -1,6 +1,6 @@
-﻿using CreateContact.Worker.Messages;
+﻿using UpdateContact.Worker.Messages;
 
-namespace CreateContact.Application.Consumers.Contact.UpdateContact
+namespace UpdateContact.Application.Consumers.Contact.UpdateContact
 {
     public interface IUpdateContactConsumer
     {

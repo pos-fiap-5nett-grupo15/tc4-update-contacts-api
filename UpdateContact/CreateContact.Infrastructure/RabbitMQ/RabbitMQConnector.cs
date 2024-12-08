@@ -1,7 +1,7 @@
-﻿using CreateContact.Infrastructure.Settings;
+﻿using UpdateContact.Infrastructure.Settings;
 using RabbitMQ.Client;
 
-namespace CreateContact.Infrastructure.RabbitMQ
+namespace UpdateContact.Infrastructure.RabbitMQ
 {
     public class RabbitMQConnector
     {

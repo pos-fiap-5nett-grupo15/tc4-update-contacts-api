@@ -1,7 +1,7 @@
-﻿using CreateContact.Infrastructure.Repositories.Contact;
+﻿using UpdateContact.Infrastructure.Repositories.Contact;
 using TechChallenge.Infrastructure.UnitOfWork;
 
-namespace CreateContact.Infrastructure.UnitOfWork
+namespace UpdateContact.Infrastructure.UnitOfWork
 {
     public sealed class UpdateContactUnitOfWork : BaseUnitOfWork, IUpdateContactUnitOfWork
     {

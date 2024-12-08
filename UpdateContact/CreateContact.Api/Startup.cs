@@ -1,13 +1,15 @@
-﻿using CreateContact.Application.DTOs.Contact.UpdateContact;
-using CreateContact.Application.DTOs.Validations;
-using CreateContact.Application.Handlers.Contact.CreateContact;
-using CreateContact.Infrastructure.Services.Contact;
-using CreateContact.Infrastructure.Settings;
-using CreateContact.Infrastructure.UnitOfWork;
+﻿using UpdateContact.Application.DTOs.Contact.UpdateContact;
+using UpdateContact.Application.DTOs.Validations;
+using UpdateContact.Application.Handlers.Contact.CreateContact;
+using UpdateContact.Infrastructure.Services.Contact;
+using UpdateContact.Infrastructure.Settings;
+using UpdateContact.Infrastructure.UnitOfWork;
 using FluentValidation;
 using TechChallenge.Infrastructure.DefaultStartup;
+using TechChallenge.Infrastructure.Middlewares;
+using Prometheus;
 
-namespace CreateContact.Api
+namespace UpdateContact.Api
 {
     internal class Startup : BaseStartup
     {
@@ -22,6 +24,9 @@ namespace CreateContact.Api
         internal void ConfigureImpl(IApplicationBuilder app, IWebHostEnvironment environment)
         {
             this.Configure(app, environment);
+
+            app.UseMiddleware<RequestCounterMiddleware>();
+            app.UseMetricServer();
         }
 
         internal void ConfigureServiceImpl(IServiceCollection services)

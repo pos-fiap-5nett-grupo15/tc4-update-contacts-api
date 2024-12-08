@@ -1,7 +1,7 @@
-﻿using CreateContact.Application.DTOs.Contact.UpdateContact;
+﻿using UpdateContact.Application.DTOs.Contact.UpdateContact;
 using FluentValidation;
 
-namespace CreateContact.Application.DTOs.Validations
+namespace UpdateContact.Application.DTOs.Validations
 {
     public class ContactValidation : AbstractValidator<UpdateContactRequest>
     {

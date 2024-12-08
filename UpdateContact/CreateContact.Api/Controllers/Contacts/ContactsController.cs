@@ -1,10 +1,10 @@
-﻿using CreateContact.Application.DTOs.Contact.UpdateContact;
+﻿using UpdateContact.Application.DTOs.Contact.UpdateContact;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 using TechChallenge.Common.DTOs;
 
-namespace CreateContact.Api.Controllers.Contacts
+namespace UpdateContact.Api.Controllers.Contacts
 {
     [ApiController]
     [Route("[controller]")]
@@ -21,12 +21,19 @@ namespace CreateContact.Api.Controllers.Contacts
         [SwaggerResponse(StatusCodes.Status400BadRequest, type: typeof(BaseReponse))]
         public async Task<IActionResult> CreateAsync([FromRoute] int id, [FromBody] UpdateContactRequest request)
         {
-            if (id <= 0)
-                return BadRequest("No contact id on route");
-            else
-                request.Id = id;
+            try
+            {
+                if (id <= 0)
+                    return BadRequest("No contact id");
+                else
+                    request.Id = id;
 
-            return Created(string.Empty, await _mediator.Send(request));
+                return Created(string.Empty, await _mediator.Send(request));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

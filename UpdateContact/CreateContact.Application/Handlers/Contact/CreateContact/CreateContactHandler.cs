@@ -1,7 +1,7 @@
-﻿using CreateContact.Application.DTOs.Contact.UpdateContact;
-using CreateContact.Infrastructure.Services.Contact;
-using CreateContact.Infrastructure.Settings;
-using CreateContact.Worker.Messages;
+﻿using UpdateContact.Application.DTOs.Contact.UpdateContact;
+using UpdateContact.Infrastructure.Services.Contact;
+using UpdateContact.Infrastructure.Settings;
+using UpdateContact.Worker.Messages;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.Logging;
@@ -9,7 +9,7 @@ using TechChallenge.Common.RabbitMQ;
 using TechChallenge.Domain.Entities.Contact;
 using TechChallenge.Domain.Enums;
 
-namespace CreateContact.Application.Handlers.Contact.CreateContact
+namespace UpdateContact.Application.Handlers.Contact.CreateContact
 {
     public class CreateContactHandler : IRequestHandler<UpdateContactRequest, UpdateContactResponse>
     {

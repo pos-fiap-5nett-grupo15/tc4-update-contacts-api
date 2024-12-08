@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using System.Text.Json.Serialization;
 
-namespace CreateContact.Application.DTOs.Contact.UpdateContact
+namespace UpdateContact.Application.DTOs.Contact.UpdateContact
 {
     public class UpdateContactRequest : IRequest<UpdateContactResponse>
     {

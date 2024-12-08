@@ -1,8 +1,10 @@
 ﻿using Dapper;
+using Microsoft.Extensions.Configuration;
 using TechChallenge.Domain.Entities.Contact;
+using TechChallenge.Infrastructure.Crypto;
 using TechChallenge.Infrastructure.UnitOfWork;
 
-namespace CreateContact.Infrastructure.Repositories.Contact
+namespace UpdateContact.Infrastructure.Repositories.Contact
 {
     public class ContactRepository : IContactRepository
     {

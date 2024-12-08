@@ -1,4 +1,4 @@
-﻿namespace CreateContact.Infrastructure.Settings
+﻿namespace UpdateContact.Infrastructure.Settings
 {
     public interface IRabbitMQProducerSettings
     {
