@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
+using System.Net;
 using TechChallenge.Common.DTOs;
 using UpdateContact.Application.DTOs.Contact.UpdateContact;
 
@@ -16,7 +17,7 @@ namespace UpdateContact.Api.Controllers.Contacts
         public ContactsController(IMediator mediator) =>
             _mediator = mediator;
 
-        [HttpPost("{id}")]
+        [HttpPatch("{id}")]
         [SwaggerResponse(StatusCodes.Status201Created)]
         [SwaggerResponse(StatusCodes.Status400BadRequest, type: typeof(BaseReponse))]
         public async Task<IActionResult> CreateAsync([FromRoute] int id, [FromBody] UpdateContactRequest request)
@@ -28,11 +29,19 @@ namespace UpdateContact.Api.Controllers.Contacts
                 else
                     request.Id = id;
 
-                return Created(string.Empty, await _mediator.Send(request));
+                var processResponse = await _mediator.Send(request);
+
+                if (processResponse.IsSuccess)
+                    return Ok();
+                else
+                {
+                    return StatusCode(processResponse.ErrorCode > 0 ? processResponse.ErrorCode : (int)HttpStatusCode.InternalServerError,
+                                      processResponse.ErrorDescription ?? "Unkown error on update process");
+                }
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return StatusCode((int)HttpStatusCode.InternalServerError, $"Error: {ex.Message}\n\n{ex.StackTrace}");
             }
         }
     }

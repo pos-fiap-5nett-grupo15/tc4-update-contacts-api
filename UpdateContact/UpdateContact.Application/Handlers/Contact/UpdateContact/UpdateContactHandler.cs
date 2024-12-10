@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.Logging;
+using System.Net;
 using TechChallenge.Common.RabbitMQ;
 using TechChallenge.Domain.Entities.Contact;
 using TechChallenge.Domain.Enums;
@@ -33,7 +34,17 @@ namespace UpdateContact.Application.Handlers.Contact.UpdateContact
         public async Task<UpdateContactResponse> Handle(UpdateContactRequest requisicao, CancellationToken ct)
         {
             if (Validate(requisicao) is var validacao && !string.IsNullOrWhiteSpace(validacao.ErrorDescription))
+            {
+                validacao.ErrorCode = (int)HttpStatusCode.BadRequest;
                 return validacao;
+            }
+
+            if (await _contactService.GetByIdAsync(requisicao.Id) is null)
+            {
+                validacao.ErrorCode = (int)HttpStatusCode.NotFound;
+                validacao.ErrorDescription = $"Contact {requisicao.Id} not found";
+                return validacao;
+            }
 
             var sucess = await _contactService.UpdateByIdAsync(Mapper(requisicao), requisicao.Id);
 
@@ -48,7 +59,10 @@ namespace UpdateContact.Application.Handlers.Contact.UpdateContact
                 _rabbitMQProducerSettings.RoutingKey,
                 ct);
 
-            return new UpdateContactResponse();
+            return new UpdateContactResponse()
+            {
+                IsSuccess = true,
+            };
         }
 
         public UpdateContactResponse Validate(UpdateContactRequest requisicao)
