@@ -15,12 +15,12 @@
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="7.0.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="7.0.0" />
+		<PackageReference Include="TechChallenge3.Common" Version="1.0.0" />
+		<PackageReference Include="TechChallenge3.Domain" Version="1.0.0" />
+		<PackageReference Include="TechChallenge3.Infrastructure" Version="1.0.0" />
 		<!-- <ProjectReference Include="..\..\..\nuget-tech-challenge-fiap\TechChallenge.Common\TechChallenge.Common.csproj" /> -->
 		<!-- <ProjectReference Include="..\..\..\nuget-tech-challenge-fiap\TechChallenge.Domain\TechChallenge.Domain.csproj" /> -->
 		<!-- <ProjectReference Include="..\..\..\nuget-tech-challenge-fiap\TechChallenge.Infrastructure\TechChallenge.Infrastructure.csproj" /> -->
-		<PackageReference Include="TechChallenge.Common" Version="1.1.0" />
-		<PackageReference Include="TechChallenge.Domain" Version="1.0.0" />
-		<PackageReference Include="TechChallenge.Infrastructure" Version="1.1.0" />
 	</ItemGroup>
 
 	<ItemGroup>

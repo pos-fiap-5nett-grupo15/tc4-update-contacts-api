@@ -1,5 +1,5 @@
 ﻿using System.Text.Json.Serialization;
-using TechChallenge.Common.DTOs;
+using TechChallenge3.Common.DTOs;
 
 namespace UpdateContact.Application.DTOs.Contact.UpdateContact
 {

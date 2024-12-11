@@ -2,9 +2,9 @@
 using MediatR;
 using Microsoft.Extensions.Logging;
 using System.Net;
-using TechChallenge.Common.RabbitMQ;
-using TechChallenge.Domain.Entities.Contact;
-using TechChallenge.Domain.Enums;
+using TechChallenge3.Common.RabbitMQ;
+using TechChallenge3.Domain.Entities.Contact;
+using TechChallenge3.Domain.Enums;
 using UpdateContact.Application.DTOs.Contact.UpdateContact;
 using UpdateContact.Infrastructure.Services.Contact;
 using UpdateContact.Infrastructure.Settings;

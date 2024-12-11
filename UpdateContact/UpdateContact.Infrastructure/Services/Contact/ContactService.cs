@@ -1,6 +1,6 @@
-﻿using UpdateContact.Infrastructure.UnitOfWork;
-using TechChallenge.Domain.Entities.Contact;
-using TechChallenge.Domain.Enums;
+﻿using TechChallenge3.Domain.Entities.Contact;
+using TechChallenge3.Domain.Enums;
+using UpdateContact.Infrastructure.UnitOfWork;
 
 namespace UpdateContact.Infrastructure.Services.Contact
 {

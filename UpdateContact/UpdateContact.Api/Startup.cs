@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using Prometheus;
-using TechChallenge.Infrastructure.DefaultStartup;
-using TechChallenge.Infrastructure.Middlewares;
+using TechChallenge3.Infrastructure.DefaultStartup;
+using TechChallenge3.Infrastructure.Middlewares;
 using UpdateContact.Application.DTOs.Contact.UpdateContact;
 using UpdateContact.Application.DTOs.Validations;
 using UpdateContact.Application.Handlers.Contact.UpdateContact;

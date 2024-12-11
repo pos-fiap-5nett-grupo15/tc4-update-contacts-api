@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
-using TechChallenge.Common.RabbitMQ;
-using TechChallenge.Domain.Enums;
+using TechChallenge3.Common.RabbitMQ;
+using TechChallenge3.Domain.Enums;
 using UpdateContact.Infrastructure.Services.Contact;
 using UpdateContact.Infrastructure.Settings;
 using UpdateContact.Worker.Messages;

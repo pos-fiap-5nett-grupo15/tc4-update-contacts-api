@@ -1,5 +1,5 @@
-﻿using TechChallenge.Domain.Entities.Contact;
-using TechChallenge.Domain.Enums;
+﻿using TechChallenge3.Domain.Entities.Contact;
+using TechChallenge3.Domain.Enums;
 
 namespace UpdateContact.Infrastructure.Services.Contact
 {

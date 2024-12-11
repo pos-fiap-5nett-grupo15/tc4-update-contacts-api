@@ -1,8 +1,6 @@
 ﻿using Dapper;
-using Microsoft.Extensions.Configuration;
-using TechChallenge.Domain.Entities.Contact;
-using TechChallenge.Infrastructure.Crypto;
-using TechChallenge.Infrastructure.UnitOfWork;
+using TechChallenge3.Domain.Entities.Contact;
+using TechChallenge3.Infrastructure.UnitOfWork;
 
 namespace UpdateContact.Infrastructure.Repositories.Contact
 {

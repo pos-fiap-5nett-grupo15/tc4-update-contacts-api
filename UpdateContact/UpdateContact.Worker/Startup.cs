@@ -1,9 +1,9 @@
 ﻿using UpdateContract.Worker.Consumers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using TechChallenge.Infrastructure.Crypto;
-using TechChallenge.Infrastructure.Settings;
-using TechChallenge.Infrastructure.UnitOfWork;
+using TechChallenge3.Infrastructure.Crypto;
+using TechChallenge3.Infrastructure.Settings;
+using TechChallenge3.Infrastructure.UnitOfWork;
 using UpdateContact.Application.Consumers.Contact.UpdateContact;
 using UpdateContact.Infrastructure.RabbitMQ;
 using UpdateContact.Infrastructure.Services.Contact;

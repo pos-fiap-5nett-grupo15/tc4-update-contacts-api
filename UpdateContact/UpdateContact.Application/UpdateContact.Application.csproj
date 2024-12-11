@@ -10,13 +10,13 @@
 		<!-- <ProjectReference Include="..\..\..\nuget-tech-challenge-fiap\TechChallenge.Common\TechChallenge.Common.csproj" /> -->
 		<!-- <ProjectReference Include="..\..\..\nuget-tech-challenge-fiap\TechChallenge.Domain\TechChallenge.Domain.csproj" /> -->
 		<!-- <ProjectReference Include="..\..\..\nuget-tech-challenge-fiap\TechChallenge.Infrastructure\TechChallenge.Infrastructure.csproj" /> -->
-		<PackageReference Include="TechChallenge.Common" Version="1.1.0" />
-		<PackageReference Include="TechChallenge.Domain" Version="1.0.0" />
-		<PackageReference Include="TechChallenge.Infrastructure" Version="1.1.0" />
 		<PackageReference Include="FluentValidation" Version="11.11.0" />
 		<PackageReference Include="MediatR" Version="12.4.1" />
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
 		<PackageReference Include="RabbitMQ.Client" Version="7.0.0" />
+		<PackageReference Include="TechChallenge3.Common" Version="1.0.0" />
+		<PackageReference Include="TechChallenge3.Domain" Version="1.0.0" />
+		<PackageReference Include="TechChallenge3.Infrastructure" Version="1.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -1,5 +1,5 @@
 ﻿using UpdateContact.Infrastructure.Repositories.Contact;
-using TechChallenge.Infrastructure.UnitOfWork;
+using TechChallenge3.Infrastructure.UnitOfWork;
 
 namespace UpdateContact.Infrastructure.UnitOfWork
 {

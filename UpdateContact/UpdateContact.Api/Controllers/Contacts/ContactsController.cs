@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 using System.Net;
-using TechChallenge.Common.DTOs;
+using TechChallenge3.Common.DTOs;
 using UpdateContact.Application.DTOs.Contact.UpdateContact;
 
 namespace UpdateContact.Api.Controllers.Contacts

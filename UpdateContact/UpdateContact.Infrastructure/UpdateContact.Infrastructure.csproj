@@ -13,12 +13,12 @@
 		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
 		<PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions" Version="8.0.10" />
 		<PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+		<PackageReference Include="TechChallenge3.Common" Version="1.0.0" />
+		<PackageReference Include="TechChallenge3.Domain" Version="1.0.0" />
+		<PackageReference Include="TechChallenge3.Infrastructure" Version="1.0.0" />
 		<!-- <ProjectReference Include="..\..\..\nuget-tech-challenge-fiap\TechChallenge.Common\TechChallenge.Common.csproj" /> -->
 		<!-- <ProjectReference Include="..\..\..\nuget-tech-challenge-fiap\TechChallenge.Domain\TechChallenge.Domain.csproj" /> -->
 		<!-- <ProjectReference Include="..\..\..\nuget-tech-challenge-fiap\TechChallenge.Infrastructure\TechChallenge.Infrastructure.csproj" /> -->
-		<PackageReference Include="TechChallenge.Common" Version="1.1.0" />
-		<PackageReference Include="TechChallenge.Domain" Version="1.0.0" />
-		<PackageReference Include="TechChallenge.Infrastructure" Version="1.1.0" />
 	</ItemGroup>
 
 </Project>

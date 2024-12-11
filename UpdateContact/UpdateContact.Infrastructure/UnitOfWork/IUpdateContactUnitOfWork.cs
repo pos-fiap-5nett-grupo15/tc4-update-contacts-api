@@ -1,6 +1,5 @@
-﻿using UpdateContact.Infrastructure.Repositories.Contact;
-using System.Transactions;
-using TechChallenge.Infrastructure.UnitOfWork;
+﻿using TechChallenge3.Infrastructure.UnitOfWork;
+using UpdateContact.Infrastructure.Repositories.Contact;
 
 namespace UpdateContact.Infrastructure.UnitOfWork
 {
