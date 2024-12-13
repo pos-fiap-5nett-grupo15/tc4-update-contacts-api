@@ -20,7 +20,7 @@ namespace UpdateContact.Api.Controllers.Contacts
         [HttpPatch("{id}")]
         [SwaggerResponse(StatusCodes.Status201Created)]
         [SwaggerResponse(StatusCodes.Status400BadRequest, type: typeof(BaseReponse))]
-        public async Task<IActionResult> CreateAsync([FromRoute] int id, [FromBody] UpdateContactRequest request)
+        public async Task<IActionResult> UpdateAsync([FromRoute] int id, [FromBody] UpdateContactRequest request)
         {
             try
             {

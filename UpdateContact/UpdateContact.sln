@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdateContact.Infrastructur
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdateContract.Worker", "UpdateContact.Worker\UpdateContract.Worker.csproj", "{B7E7DE58-F0C7-48C2-B6D6-A2E82CF76586}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpdateContact.Test", "UpdateContact.Test\UpdateContact.Test.csproj", "{D76EA5A1-CCCB-4D02-848E-62F13FC88195}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{B7E7DE58-F0C7-48C2-B6D6-A2E82CF76586}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7E7DE58-F0C7-48C2-B6D6-A2E82CF76586}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7E7DE58-F0C7-48C2-B6D6-A2E82CF76586}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D76EA5A1-CCCB-4D02-848E-62F13FC88195}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D76EA5A1-CCCB-4D02-848E-62F13FC88195}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D76EA5A1-CCCB-4D02-848E-62F13FC88195}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D76EA5A1-CCCB-4D02-848E-62F13FC88195}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

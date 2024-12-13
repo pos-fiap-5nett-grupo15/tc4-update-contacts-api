@@ -33,13 +33,20 @@ namespace UpdateContact.Application.Handlers.Contact.UpdateContact
 
         public async Task<UpdateContactResponse> Handle(UpdateContactRequest requisicao, CancellationToken ct)
         {
-            if (Validate(requisicao) is var validacao && !string.IsNullOrWhiteSpace(validacao.ErrorDescription))
+            if (requisicao is null)
+            {
+                return new UpdateContactResponse()
+                {
+                    ErrorCode = (int)HttpStatusCode.BadRequest,
+                    ErrorDescription = "Contact body cannot be null",
+                };
+            }
+            else if (Validate(requisicao) is var validacao && !string.IsNullOrWhiteSpace(validacao.ErrorDescription))
             {
                 validacao.ErrorCode = (int)HttpStatusCode.BadRequest;
                 return validacao;
             }
-
-            if (await _contactService.GetByIdAsync(requisicao.Id) is null)
+            else if (await _contactService.GetByIdAsync(requisicao.Id) is null)
             {
                 validacao.ErrorCode = (int)HttpStatusCode.NotFound;
                 validacao.ErrorDescription = $"Contact {requisicao.Id} not found";
@@ -69,7 +76,12 @@ namespace UpdateContact.Application.Handlers.Contact.UpdateContact
         {
             var retorno = new UpdateContactResponse();
             var result = _validator.Validate(requisicao);
-            if (!result.IsValid)
+            if (result is null)
+            {
+                retorno.ErrorCode = (int)HttpStatusCode.InternalServerError;
+                retorno.ErrorDescription = "Unabled to validate request body";
+            }
+            else if (!result.IsValid)
             {
                 var erroMensagem = "";
                 foreach (var error in result.Errors)

@@ -7,6 +7,9 @@ namespace UpdateContact.Application.DTOs.Validations
     {
         public ContactValidation()
         {
+            RuleFor(c => c)
+                .NotNull().NotEmpty().WithMessage("O objeto de resposta {PorpertyName} não pode ser nulo");
+
             RuleFor(c => c.Nome)
                 .NotEmpty().WithMessage("O campo {PropertyName} precisa ser fornecido");
 
