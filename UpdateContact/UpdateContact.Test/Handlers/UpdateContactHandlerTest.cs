@@ -1,14 +1,19 @@
-﻿using FluentValidation;
+﻿
+using FluentValidation;
 using FluentValidation.Results;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Moq;
 using System.Net;
 using TechChallenge3.Domain.Entities.Contact;
 using TechChallenge3.Domain.Enums;
+using TechChallenge3.Infrastructure.Crypto;
+using TechChallenge3.Infrastructure.UnitOfWork;
 using UpdateContact.Application.DTOs.Contact.UpdateContact;
 using UpdateContact.Application.DTOs.Validations;
 using UpdateContact.Application.Handlers.Contact.UpdateContact;
+using UpdateContact.Infrastructure.Repositories.Contact;
 using UpdateContact.Infrastructure.Services.Contact;
 using UpdateContact.Infrastructure.Settings;
 
@@ -127,6 +132,39 @@ namespace UpdateContact.Test.Handlers
             Assert.Equal((int)HttpStatusCode.BadRequest, result.ErrorCode);
         }
 
+        [Fact]
+        public async void UpdateContactSuccessIntegrated()
+        {
+            //set
+            var configuration = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json")
+            .Build();
+
+            var contactRepository = new ContactRepository(new TechDatabase(configuration, new CryptoService(null)));
+
+            var contactData = new ContactEntity()
+            {
+                Id = 1,
+                Nome = GenerateRandomString(),
+                Ddd = int.TryParse(GenerateRandomString(2, true), out int ddd) ? ddd : 99,
+                Email = GenerateRandomString(),
+                Telefone = int.TryParse(GenerateRandomString(9, true), out int tel) ? tel : 999999999,
+            };
+
+            //act
+            var updateResult = await contactRepository.UpdateByIdAsync(contactData, contactData.Id);
+            var updatedData = await contactRepository.GetByIdAsync(contactData.Id);
+
+            //assert
+            Assert.True(updateResult);
+            Assert.NotNull(updatedData);
+            Assert.Equal(contactData.Id, updatedData.Id);
+            Assert.Equal(contactData.Nome, updatedData.Nome);
+            Assert.Equal(contactData.Ddd, updatedData.Ddd);
+            Assert.Equal(contactData.Email, updatedData.Email);
+            Assert.Equal(contactData.Telefone, updatedData.Telefone);
+        }
 
         private static string GenerateRandomString(int length = 10, bool onlyNumbers = false, bool onlyLetters = false)
         {
