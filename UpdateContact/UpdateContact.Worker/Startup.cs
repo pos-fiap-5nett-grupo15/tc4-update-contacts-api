@@ -1,6 +1,6 @@
-﻿using UpdateContract.Worker.Consumers;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Prometheus;
 using TechChallenge3.Infrastructure.Crypto;
 using TechChallenge3.Infrastructure.Settings;
 using TechChallenge3.Infrastructure.UnitOfWork;
@@ -9,6 +9,7 @@ using UpdateContact.Infrastructure.RabbitMQ;
 using UpdateContact.Infrastructure.Services.Contact;
 using UpdateContact.Infrastructure.Settings;
 using UpdateContact.Infrastructure.UnitOfWork;
+using UpdateContract.Worker.Consumers;
 
 namespace UpdateContract.Worker
 {
@@ -19,7 +20,10 @@ namespace UpdateContract.Worker
         public Startup(IConfiguration configuration) =>
             this.Configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
 
-        internal void Configure(IApplicationBuilder app, IWebHostEnvironment environment) { }
+        internal void Configure(IApplicationBuilder app, IWebHostEnvironment environment)
+        {
+            app.UseMetricServer();
+        }
 
         internal void ConfigureService(IServiceCollection services)
         {
