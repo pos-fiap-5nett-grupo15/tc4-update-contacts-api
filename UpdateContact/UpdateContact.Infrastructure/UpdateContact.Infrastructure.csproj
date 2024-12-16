@@ -15,7 +15,7 @@
 		<PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
 		<PackageReference Include="TechChallenge3.Common" Version="1.0.0" />
 		<PackageReference Include="TechChallenge3.Domain" Version="1.0.0" />
-		<PackageReference Include="TechChallenge3.Infrastructure" Version="1.0.0" />
+		<PackageReference Include="TechChallenge3.Infrastructure" Version="1.1.0" />
 		<!-- <ProjectReference Include="..\..\..\nuget-tech-challenge-fiap\TechChallenge.Common\TechChallenge.Common.csproj" /> -->
 		<!-- <ProjectReference Include="..\..\..\nuget-tech-challenge-fiap\TechChallenge.Domain\TechChallenge.Domain.csproj" /> -->
 		<!-- <ProjectReference Include="..\..\..\nuget-tech-challenge-fiap\TechChallenge.Infrastructure\TechChallenge.Infrastructure.csproj" /> -->

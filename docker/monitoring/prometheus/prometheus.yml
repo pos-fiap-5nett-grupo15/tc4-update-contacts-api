@@ -3,9 +3,30 @@ global:
   evaluation_interval: 15s
 
 scrape_configs:
+  - job_name: user-service
+    static_configs:
+      - targets: ['host.docker.internal:5125']
+  - job_name: get-service
+    static_configs:
+      - targets: ['host.docker.internal:5551']
+  - job_name: get-service-consumer
+    static_configs:
+      - targets: ['host.docker.internal:5552']
+  - job_name: create-service
+    static_configs:
+      - targets: ['host.docker.internal:5553']
+  - job_name: create-service-consumer
+    static_configs:
+      - targets: ['host.docker.internal:5554']
   - job_name: update-service
     static_configs:
       - targets: ['host.docker.internal:5189']
   - job_name: update-service-consumer
     static_configs:
       - targets: ['host.docker.internal:5000']
+  - job_name: delete-service
+    static_configs:
+      - targets: ['host.docker.internal:5555']
+  - job_name: delete-service-consumer
+    static_configs:
+      - targets: ['host.docker.internal:5556']

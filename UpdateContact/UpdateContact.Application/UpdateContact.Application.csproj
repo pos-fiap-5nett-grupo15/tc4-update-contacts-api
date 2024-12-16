@@ -16,7 +16,7 @@
 		<PackageReference Include="RabbitMQ.Client" Version="7.0.0" />
 		<PackageReference Include="TechChallenge3.Common" Version="1.0.0" />
 		<PackageReference Include="TechChallenge3.Domain" Version="1.0.0" />
-		<PackageReference Include="TechChallenge3.Infrastructure" Version="1.0.0" />
+		<PackageReference Include="TechChallenge3.Infrastructure" Version="1.1.0" />
 	</ItemGroup>
 
 	<ItemGroup>
