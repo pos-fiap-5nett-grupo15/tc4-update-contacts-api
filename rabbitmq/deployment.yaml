@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: update-contact-worker
+  namespace: tc3
+  labels:
+    app: update-contact-worker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: update-contact-worker
+  template:
+    metadata:
+      labels:
+        app: update-contact-worker
+    spec:
+      containers:
+      - name: update-contact-worker
+        image: fiaptech3acr.azurecr.io/tc3-update-contact-worker:latest
+        ports:
+        - containerPort: 8092
+        env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: "Development"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: update-contact-worker-service
+  namespace: tc3
+spec:
+  selector:
+    app: update-contact-worker
+  ports:
+    - protocol: TCP
+      port: 8092
+      targetPort: 8092
+  type: ClusterIP
