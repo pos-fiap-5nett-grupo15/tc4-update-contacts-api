@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: update-contacts
+  namespace: tc3
+  labels:
+    app: update-contacts
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: update-contacts
+  template:
+    metadata:
+      labels:
+        app: update-contacts
+    spec:
+      containers:
+      - name: update-contacts
+        image: fiaptech3acr.azurecr.io/tc3-update-contact:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: ASPNETCORE_URLS
+          value: "http://+:8080"
+        - name: ASPNETCORE_ENVIRONMENT
+          value: "Development"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: update-contacs-service
+  namespace: tc3
+spec:
+  selector:
+    app: update-contacts
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8082
+  type: ClusterIP
