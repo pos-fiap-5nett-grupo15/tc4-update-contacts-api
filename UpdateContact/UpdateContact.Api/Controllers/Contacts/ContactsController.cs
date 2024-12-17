@@ -9,7 +9,7 @@ using UpdateContact.Application.DTOs.Contact.UpdateContact;
 namespace UpdateContact.Api.Controllers.Contacts
 {
     [ApiController]
-    [Route("[controller]")]
+    // [Route("[controller]")]
     public class ContactsController : ControllerBase
     {
         private readonly IMediator _mediator;
