@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 
 WORKDIR /App
 
-COPY ./CreateContact/. ./
+COPY ./UpdateContact/. ./
 
 RUN dotnet restore  ./UpdateContact.Worker/UpdateContact.Worker.csproj
 RUN dotnet build ./UpdateContact.Worker/UpdateContact.Worker.csproj
