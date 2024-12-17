@@ -9,7 +9,7 @@ using UpdateContact.Application.DTOs.Contact.UpdateContact;
 namespace UpdateContact.Api.Controllers.Contacts
 {
     [ApiController]
-    // [Route("[controller]")]
+    [Route("contacts")]
     public class ContactsController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -17,8 +17,8 @@ namespace UpdateContact.Api.Controllers.Contacts
         public ContactsController(IMediator mediator) =>
             _mediator = mediator;
 
-        [Authorize]
-        [HttpPatch("{id}")]
+        //[Authorize]
+        [HttpPatch("update/{id}")]
         [SwaggerResponse(StatusCodes.Status201Created)]
         [SwaggerResponse(StatusCodes.Status400BadRequest, type: typeof(BaseReponse))]
         public async Task<IActionResult> UpdateAsync([FromRoute] int id, [FromBody] UpdateContactRequest request)
