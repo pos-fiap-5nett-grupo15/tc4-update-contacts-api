@@ -144,7 +144,11 @@ namespace UpdateContact.Test.Handlers
             .AddJsonFile("appsettings.json")
             .Build();
 
-            var contactRepository = new ContactRepository(new TechDatabase(configuration, new CryptoService(null)));
+            var contactRepository = new ContactRepository(new TechDatabase(configuration, new CryptoService(new TechChallenge3.Infrastructure.Settings.CryptoSettings
+            {
+                SecKey = "IGVRaqQssHbDh3adxV22rw73SmOusqrKHomyJe33TrM=",
+                SecIv = "iqs1k4XU6wADBBOP3cpg5A=="
+            })));
 
             var contactData = new ContactEntity()
             {
