@@ -1,7 +1,7 @@
 trigger:
   branches:
     include:
-      - development
+      - main
   paths:
     exclude:
       - READEME.md
@@ -48,9 +48,22 @@ stages:
           $(tag)
           latest
 
+  - job: Tests
+    displayName: Tests
+    dependsOn: Build
+    pool:
+      vmImage: $(vmImageName)
+    steps:
+    - task: DotNetCoreCLI@2
+      inputs:
+        command: 'test'
+        projects: '$(System.DefaultWorkingDirectory)/UpdateContact/UpdateContact.Test/UpdateContact.Test.csproj'
+        testRunTitle: 'Unit Tests'
+        requestTimeout: 600
+
   - job: UploadArtifact
     displayName: "Upload Deployment YAML"
-    dependsOn: Build
+    dependsOn: Tests
     steps:
     - task: PublishPipelineArtifact@1
       inputs:
