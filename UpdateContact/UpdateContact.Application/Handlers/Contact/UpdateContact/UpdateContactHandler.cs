@@ -55,15 +55,18 @@ namespace UpdateContact.Application.Handlers.Contact.UpdateContact
 
             var sucess = await _contactService.UpdateByIdAsync(Mapper(requisicao), requisicao.Id);
 
-            await RabbitMQManager.Publish(
+            await RabbitMQManager.PublishAsync(
                 new UpdateContactMessage
                 {
                     Id = requisicao.Id,
                     UpdateSucess = sucess,
                 },
-                _rabbitMQProducerSettings.Host,
-                _rabbitMQProducerSettings.Exchange,
-                _rabbitMQProducerSettings.RoutingKey,
+                hostName: _rabbitMQProducerSettings.Host,
+                port: _rabbitMQProducerSettings.Port,
+                userName: _rabbitMQProducerSettings.Username,
+                password: _rabbitMQProducerSettings.Password,
+                exchangeName: _rabbitMQProducerSettings.Exchange,
+                routingKeyName: _rabbitMQProducerSettings.RoutingKey,
                 ct);
 
             return new UpdateContactResponse()

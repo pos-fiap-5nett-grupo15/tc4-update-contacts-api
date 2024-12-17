@@ -6,5 +6,6 @@
         public string Host { get; }
         public string Username { get; }
         public string Password { get; }
+        int Port { get; }
     }
 }

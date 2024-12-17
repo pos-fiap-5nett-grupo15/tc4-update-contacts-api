@@ -38,11 +38,14 @@ namespace UpdateContact.Application.Consumers.Contact.UpdateContact
             {
                 _logger.LogWarning($"An invalid message was received with contact id: {message.Id}.");
 
-                await RabbitMQManager.Publish(
+                await RabbitMQManager.PublishAsync(
                     new UpdateContactMessage { Id = message.Id },
-                    _rabbitMQProducerSettings.Host,
-                    _rabbitMQProducerSettings.Exchange,
-                    _rabbitMQProducerSettings.RoutingKey,
+                    hostName: _rabbitMQProducerSettings.Host,
+                    port: _rabbitMQProducerSettings.Port,
+                    userName: _rabbitMQProducerSettings.Username,
+                    password: _rabbitMQProducerSettings.Password,
+                    exchangeName: _rabbitMQProducerSettings.Exchange,
+                    routingKeyName: _rabbitMQProducerSettings.RoutingKey,
                     ct);
                 return;
             }
