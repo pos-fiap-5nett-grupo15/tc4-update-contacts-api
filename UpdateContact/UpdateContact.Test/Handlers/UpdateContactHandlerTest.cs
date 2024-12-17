@@ -50,7 +50,7 @@ namespace UpdateContact.Test.Handlers
             //set
             _contactService.Setup(x => x.GetByIdAsync(It.IsAny<int>())).ReturnsAsync(new ContactEntity());
             _contactService.Setup(x => x.UpdateByIdAsync(It.IsAny<ContactEntity>(), It.IsAny<int>())).ReturnsAsync(true);
-            _rabbitSettings.SetupGet(x => x.Host).Returns("localhost");
+            _rabbitSettings.SetupGet(x => x.Host).Returns("rabbitmq-service");
             _rabbitSettings.SetupGet(x => x.Port).Returns(5672);
             _rabbitSettings.SetupGet(x => x.Exchange).Returns("tc3-test-exchange");
             _rabbitSettings.SetupGet(x => x.RoutingKey).Returns("tc3-test-routing-key");
