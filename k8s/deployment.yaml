@@ -19,17 +19,17 @@ spec:
       - name: update-contacts
         image: fiaptech3acr.azurecr.io/tc3-update-contact:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 8082
         env:
         - name: ASPNETCORE_URLS
-          value: "http://+:8080"
+          value: "http://+:8082"
         - name: ASPNETCORE_ENVIRONMENT
           value: "Development"
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: update-contacs-service
+  name: update-contacts-service
   namespace: tc3
 spec:
   selector:
