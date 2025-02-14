@@ -52,27 +52,29 @@ namespace UpdateContact.Application.Handlers.Contact.UpdateContact
                 validacao.ErrorDescription = $"Contact {requisicao.Id} not found";
                 return validacao;
             }
-
-            var sucess = await _contactService.UpdateByIdAsync(Mapper(requisicao), requisicao.Id);
-
-            await RabbitMQManager.PublishAsync(
-                new UpdateContactMessage
-                {
-                    Id = requisicao.Id,
-                    UpdateSucess = sucess,
-                },
-                hostName: _rabbitMQProducerSettings.Host,
-                port: _rabbitMQProducerSettings.Port,
-                userName: _rabbitMQProducerSettings.Username,
-                password: _rabbitMQProducerSettings.Password,
-                exchangeName: _rabbitMQProducerSettings.Exchange,
-                routingKeyName: _rabbitMQProducerSettings.RoutingKey,
-                ct);
-
-            return new UpdateContactResponse()
+            else
             {
-                IsSuccess = true,
-            };
+                await _contactService.UpdateStatusByIdAsync(Mapper(requisicao), ContactSituationEnum.PENDENTE_ATUALIZACAO);
+
+                await RabbitMQManager.PublishAsync(
+                    new UpdateContactMessage
+                    {
+                        Id = requisicao.Id,
+                        UpdateData = requisicao,
+                    },
+                    hostName: _rabbitMQProducerSettings.Host,
+                    port: _rabbitMQProducerSettings.Port,
+                    userName: _rabbitMQProducerSettings.Username,
+                    password: _rabbitMQProducerSettings.Password,
+                    exchangeName: _rabbitMQProducerSettings.Exchange,
+                    routingKeyName: _rabbitMQProducerSettings.RoutingKey,
+                    ct);
+
+                return new UpdateContactResponse()
+                {
+                    IsSuccess = true,
+                };
+            }
         }
 
         public UpdateContactResponse Validate(UpdateContactRequest requisicao)

@@ -11,9 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdateContact.Domain", "Upd
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdateContact.Infrastructure", "UpdateContact.Infrastructure\UpdateContact.Infrastructure.csproj", "{4C8C4607-04ED-43A2-958C-9F1798084E10}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdateContract.Worker", "UpdateContact.Worker\UpdateContract.Worker.csproj", "{B7E7DE58-F0C7-48C2-B6D6-A2E82CF76586}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdateContact.Worker", "UpdateContact.Worker\UpdateContact.Worker.csproj", "{B7E7DE58-F0C7-48C2-B6D6-A2E82CF76586}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpdateContact.Test", "UpdateContact.Test\UpdateContact.Test.csproj", "{D76EA5A1-CCCB-4D02-848E-62F13FC88195}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdateContact.Test", "UpdateContact.Test\UpdateContact.Test.csproj", "{D76EA5A1-CCCB-4D02-848E-62F13FC88195}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
