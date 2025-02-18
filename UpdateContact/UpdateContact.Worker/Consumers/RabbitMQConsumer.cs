@@ -14,17 +14,35 @@ namespace UpdateContract.Worker.Consumers
         private readonly IConnection _connection;
         private readonly IServiceProvider _serviceProvider;
         private readonly string _queueName;
+        private readonly ILogger<RabbitMQConsumer> _logger;
 
         public RabbitMQConsumer(
             RabbitMQConnector rabbitMQService,
-            IServiceProvider serviceProvider)
+            IServiceProvider serviceProvider,
+            ILogger<RabbitMQConsumer> logger)
         {
-            _serviceProvider = serviceProvider ?? throw new ArgumentNullException(nameof(serviceProvider));
-            rabbitMQService = rabbitMQService ?? throw new ArgumentNullException(nameof(rabbitMQService));
+            try
+            {
+                _logger = logger;
 
-            _queueName = rabbitMQService.RabbitMQSettings.Queue;
-            _connection = rabbitMQService.GetConnection().Result;
-            _channel = _connection.CreateChannelAsync().Result;
+                _logger.LogInformation("Configuring RabbitMQConsumer");
+                _serviceProvider = serviceProvider ?? throw new ArgumentNullException(nameof(serviceProvider));
+                rabbitMQService = rabbitMQService ?? throw new ArgumentNullException(nameof(rabbitMQService));
+
+                _queueName = rabbitMQService.RabbitMQSettings.Queue;
+                _connection = rabbitMQService.GetConnection().Result;
+                _channel = _connection.CreateChannelAsync().Result;
+
+                _logger.LogInformation("RabbitMQConsumer info");
+                _logger.LogInformation($"queueName: {_queueName}\n" +
+                                       $"connection: {_connection}\n" +
+                                       $"channel: {_channel}");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error to configure RabbitMQConsumer: {ex.Message}", ex);
+                throw;
+            }
         }
 
         protected override async Task ExecuteAsync(CancellationToken ct)
@@ -37,10 +55,12 @@ namespace UpdateContract.Worker.Consumers
 
                 using (var scope = _serviceProvider.CreateScope())
                 {
+                    _logger.LogInformation("Event received");
                     var handler = scope.ServiceProvider.GetRequiredService<IUpdateContactConsumer>();
                     var exampleMessage = JsonSerializer.Deserialize<UpdateContactMessage>(message);
                     if (exampleMessage != null)
                     {
+                        _logger.LogInformation("Handling event");
                         await handler.HandleAsync(exampleMessage, ct);
                     }
                 }
