@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: update-contacts
-        image: PLACEHOLDER_CONTAINER_REGISTRY/PLACEHOLDER_IMAGE_REPOSITORY:latest
+        image: PLACEHOLDER_CONTAINER_REGISTRY/PLACEHOLDER_IMAGE_REPOSITORY:PLACEHOLDER_TAG
         ports:
         - containerPort: 8082
         env:
