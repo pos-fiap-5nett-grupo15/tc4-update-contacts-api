@@ -5,6 +5,8 @@ trigger:
   paths:
     exclude:
       - READEME.md
+      - rabbitmq/*
+      - sonnar/*
 
 resources:
 - repo: self
