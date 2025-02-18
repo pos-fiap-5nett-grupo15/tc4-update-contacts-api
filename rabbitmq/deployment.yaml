@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: update-contact-worker
-  namespace: tc3
+  namespace: PLACEHOLDER_NAMESPACE
   labels:
     app: update-contact-worker
 spec:
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: update-contact-worker
-        image: fiaptech3acr.azurecr.io/tc3-update-contact-worker:latest
+        image: PLACEHOLDER_CONTAINER_REGISTRY/PLACEHOLDER_IMAGE_REPOSITORY:PLACEHOLDER_TAG
         ports:
         - containerPort: 8092
         env:
@@ -28,7 +28,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: update-contact-worker-service
-  namespace: tc3
+  namespace: PLACEHOLDER_NAMESPACE
 spec:
   selector:
     app: update-contact-worker
