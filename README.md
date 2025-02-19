@@ -1,20 +1,39 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+# Tech Challenge 3 - Grupo 15
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+Projeto realizado pelo **Grupo 15** da turma da FIAP de Arquitetura de Sistemas .NET com Azure
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+## Autores
+
+||
+|--|
+| Luis Gustavo Gonçalves Reimberg |
+| Caio Vinícius Moura Santos Maia |
+| Evandro Prates Silva |
+| Guilherme Castro Batista Pereira |
+
+
+## UpdateContact
+
+### Tecnologias Utilizadas
+- .NET 8
+- Dapper
+- RabbitMQ
+- FluentValidation
+- XUnit
+- MediatR
+- Moq
+
+Dentro da arquitetura de microsserviços desenvolvida para este tech challenge, este projeto realiza a função de atualizar os contatos, seguindo o passo a passo abaixo:
+
+### API
+- Receber a requisição
+- Validar os dados da requisição e a existência do contato a ser atualizado
+- Atualizar o status do contato/registro no banco de dados
+- Enviar a requisição para a respectiva fila de atualização
+
+### Worker
+- Consumir a fila de atualizações
+- Realizar a validação adicional para garantir a integridade do contato/registro no banco de dados
+- Atualizar o contato e o seu respectivo status
